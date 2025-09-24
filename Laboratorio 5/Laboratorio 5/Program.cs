@@ -1,4 +1,4 @@
-﻿internal class Program
+﻿internal class ProgramOP
 {
     private int[] sueldos;
     public void cargar()
@@ -24,10 +24,9 @@
         }
         Console.ReadKey();
     }
-
     static void Main(string[] args)
     {
-        Program pv = new Program();
+        ProgramOP pv= new ProgramOP();
         pv.cargar();
         pv.imprimir();
     }
