@@ -1,5 +1,5 @@
 ﻿internal class Program
-                //José Sánchez 8-1032-2111
+                //José Sánchez 
 {
     private static void Main(string[] args)
     {
