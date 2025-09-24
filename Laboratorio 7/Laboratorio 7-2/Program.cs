@@ -1,7 +1,8 @@
 ﻿internal class Program
 {
-    private static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        JuegoDeDados j = new JuegoDeDados();
+        j.Jugar();
     }
 }
