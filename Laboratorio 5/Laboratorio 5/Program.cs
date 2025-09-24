@@ -1,29 +1,34 @@
 ﻿internal class Program
 {
-    private static void Main(string[] args)
+    private int[] sueldos;
+    public void cargar()
     {
-        // Declaración errónea en C#
-        // int valores[];
-
-        // Declaración válida
-        int[] valores;                 // valores sin inicializar
-        valores = new int[100];        // 100 elementos
-        valores = new int[20];         // ahora contiene 20 elementos
-
-        // Arreglos unidimensionales
-        int[] valores1;                // sin inicializar
-        int[] valores2 = new int[50];  // 50 elementos
-
-        // Arreglos multidimensionales
-        int[,] valores3;               // sin inicializar
-        int[,] valores4 = new int[3, 7]; // matriz de 3x7
-        int[,,] valores5 = new int[3, 4, 2]; // arreglo tridimensional
-
-        // Arreglo de arreglos (jagged array)
-        int[][] matriz = new int[3][]; // 3 filas
-        for (int i = 0; i < matriz.Length; i++)
+        //José Sánchez 8-1032-2111  1GS-222
+        //Ejemplo 5.1: Cargar y mostrar sueldos de 5 operarios.
+        sueldos = new int[6];
+        for (int f = 1; f <= 5; f++)
         {
-            matriz[i] = new int[4]; // cada fila con 4 columnas
+            Console.Write("Ingrese sueldo del operario " + f + ": ");
+            String linea;
+            linea = Console.ReadLine();
+            sueldos[f] = int.Parse(linea);
         }
+    }
+
+    public void imprimir()
+    {
+        Console.Write("Los 5 sueldos de los operarios \n");
+        for (int f = 1; f <= 5; f++)
+        {
+            Console.Write("[" + sueldos[f] + "]");
+        }
+        Console.ReadKey();
+    }
+
+    static void Main(string[] args)
+    {
+        Program pv = new Program();
+        pv.cargar();
+        pv.imprimir();
     }
 }
