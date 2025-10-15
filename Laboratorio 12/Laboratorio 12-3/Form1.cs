@@ -60,10 +60,8 @@ namespace Laboratorio_12_3
             b = Convert.ToDouble(txtbox_B.Text);
             c = Convert.ToDouble(txtbox_c.Text);
             s = (a + b + c) / 2;
-            area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
 
             txtbox_CalcularSemiP.Text = Convert.ToString(s);
-            txtbox_AreaT.Text = Convert.ToString(area);
         }
     }
 }
