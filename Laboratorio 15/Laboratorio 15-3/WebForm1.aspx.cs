@@ -14,6 +14,10 @@ namespace Laboratorio_15_3
 
         }
 
-
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String texto = TextBox1.Text;
+            Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "MessageBox", "window.alert(' Hola: " + texto + "');", true);
+        }
     }
 }

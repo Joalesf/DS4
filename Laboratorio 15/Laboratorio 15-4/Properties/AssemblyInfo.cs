@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Laboratorio_15_3")]
+[assembly: AssemblyTitle("Laboratorio_15_4")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("Laboratorio_15_3")]
+[assembly: AssemblyProduct("Laboratorio_15_4")]
 [assembly: AssemblyCopyright("Copyright © HP 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("3de66e12-2423-47b3-b569-98e06fb3b250")]
+[assembly: Guid("08b16811-1bed-4ff0-b697-9b2ecea93da0")]
 
 // Version information for an assembly consists of the following four values:
 //
