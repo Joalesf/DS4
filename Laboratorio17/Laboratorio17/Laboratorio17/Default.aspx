@@ -12,7 +12,7 @@ AutoGenerateEditButton="True"
 Runat="Server"/>
 
 <asp:SqlDataSource ID="MyDataSource1" runat="server"
-ConnectionString="data source=JOALEXS;initial catalog=northwind;persist security info=True;Integrated Security=SSPI;"
+ConnectionString="data source=ADMINIS-E1FE361;initial catalog=northwind;persist security info=True;Integrated Security=SSPI;"
 ProviderName="System.Data.SqlClient"
 SelectCommand="SELECT ProductId, ProductName, UnitPrice From Products"
 UpdateCommand="Update Products Set [ProductName]=@ProductName, [UnitPrice]=@UnitPrice Where [ProductID]=@ProductID">
