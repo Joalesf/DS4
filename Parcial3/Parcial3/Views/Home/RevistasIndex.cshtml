@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Parcial3.Models.Revista>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Lista de Revistas";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold"> Revistas Científicas</h2>
+        <a href="@Url.Action("RevistasCreate", "Home")" class="btn btn-primary">
+            ➕ Crear nueva revista
+        </a>
+    </div>
+
+    <table class="table table-bordered table-striped shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>ISSN</th>
+                <th style="width:150px;">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.RevistaId</td>
+                    <td>@item.NombreRevista</td>
+                    <td>@item.ISSN</td>
+                    <td>
+                        <a href="@Url.Action("RevistasEdit", "Home", new { id = item.RevistaId })"
+                           class="btn btn-sm btn-warning">
+                            ✏ Editar
+                        </a>
+
+                        @using (Html.BeginForm("RevistasDelete", "Home", new { id = item.RevistaId }, FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('¿Está seguro de eliminar esta revista?');">
+                                🗑 Eliminar
+                            </button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+</style>

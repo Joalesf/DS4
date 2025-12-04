@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Inicio";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <h1 class="fw-bold">📚 Sistema de Artículos Científicos</h1>
+        <p class="text-muted fs-5">Gestione artículos, autores y revistas desde un solo lugar</p>
+    </div>
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-3">
+            <a href="@Url.Action("ArticulosIndex", "Home")" class="text-decoration-none">
+                <div class="card shadow-sm text-center p-3 menu-card">
+                    <h4 class="fw-bold">Artículos</h4>
+                    <p class="text-muted">Ver, crear y administrar artículos científicos</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-3">
+            <a href="@Url.Action("AutoresIndex", "Home")" class="text-decoration-none">
+                <div class="card shadow-sm text-center p-3 menu-card">
+                    <h4 class="fw-bold">Autores</h4>
+                    <p class="text-muted">Listado y registro de investigadores</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+            <a href="@Url.Action("RevistasIndex", "Home")" class="text-decoration-none">
+                <div class="card shadow-sm text-center p-3 menu-card">
+                    <h4 class="fw-bold">Revistas</h4>
+                    <p class="text-muted">Revistas donde se publican los artículos</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-3">
+            <a href="@Url.Action("Consulta", "Home")" class="text-decoration-none">
+                <div class="card shadow-sm text-center p-3 menu-card">
+                    <h4 class="fw-bold">Consulta</h4>
+                    <p class="text-muted">Busque artículos por autor, revista o título</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .menu-card {
+        border-radius: 12px;
+        transition: 0.2s ease-in-out;
+    }
+
+        .menu-card:hover {
+            transform: tr
