@@ -1,0 +1,117 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoEvents | Experiencias que se viven</title>
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            position: relative;
+        }
+
+        .hero-slide {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+            .hero-slide.active {
+                opacity: 1;
+            }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 80px;
+            color: white;
+            max-width: 900px;
+        }
+
+            .hero-content h1 {
+                font-size: 60px;
+                line-height: 1.1;
+            }
+
+            .hero-content p {
+                font-size: 20px;
+                margin: 25px 0;
+                opacity: .9;
+            }
+
+            .hero-content a {
+                display: inline-block;
+                padding: 16px 32px;
+                background: #6366f1;
+                color: white;
+                text-decoration: none;
+                font-weight: bold;
+                border-radius: 50px;
+                transition: transform .3s;
+            }
+
+                .hero-content a:hover {
+                    transform: scale(1.05);
+                }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <div class="hero-slide active" style="background-image:url('/Content/assets/images/hero/hero1.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('/Content/assets/images/hero/hero2.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('/Content/assets/images/hero/hero3.jpg')"></div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <div>
+                <h1>Eventos que se sienten,<br />no solo se organizan</h1>
+                <p>
+                    Producción de eventos sociales y corporativos con un enfoque
+                    profesional, creativo y tecnológico.
+                </p>
+                <a href="/Account/Login">Ingresar a la plataforma</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    let index = 0;
+    const slides = $('.hero-slide');
+
+    setInterval(() => {
+        slides.removeClass('active');
+        index = (index + 1) % slides.length;
+        slides.eq(index).addClass('active');
+    }, 5000);
+    </script>
+
+</body>
+</html>

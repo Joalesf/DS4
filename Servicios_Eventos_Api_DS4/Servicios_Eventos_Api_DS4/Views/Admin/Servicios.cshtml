@@ -1,0 +1,17 @@
+﻿@model List<Servicios_Eventos_Api_DS4.Models.Servicio>
+
+<h2>Servicios (Admin)</h2>
+<p><a href="/Admin/Dashboard">← Dashboard</a> | <a href="/Admin/NuevoServicio">+ Nuevo</a></p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr><th>ID</th><th>Nombre</th><th>Precio</th><th>Activo</th></tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.ServicioId</td>
+            <td>@s.Nombre</td>
+            <td>$@s.Precio</td>
+            <td>@s.Activo</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,79 @@
+﻿@model List<Servicios_Eventos_Api_DS4.Models.Servicio>
+
+
+<section class="hero-landing">
+    <div class="hero-bg"
+         style="background-image:url('/Content/assets/images/hero/hero1.jpg')">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Eventos que se viven</h1>
+        <p>
+            Producción, servicios y experiencias diseñadas
+            para momentos que no se olvidan.
+        </p>
+
+        <a href="#servicios" class="btn btn-primary hero-btn">
+            Explorar servicios
+        </a>
+    </div>
+</section>
+
+<section id="servicios" class="services-section">
+
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <p class="section-subtitle">
+        Creamos experiencias memorables para cada tipo de evento
+    </p>
+
+    <div class="grid">
+        @foreach (var s in Model)
+        {
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="/Content/assets/images/events/event@(s.ServicioId % 4 + 1).jpg" />
+                </div>
+
+                <div class="service-body">
+                    <h3>@s.Nombre</h3>
+                    <p>@s.Descripcion</p>
+
+                    <div class="service-footer">
+                        <span class="price">$@s.Precio</span>
+                        <a class="btn btn-primary"
+                           href="/Servicios/Reservar/@s.ServicioId">
+                            Reservar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<style>
+    .hero-landing {
+        height: 60vh;
+        background: #000;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .service-card {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+    }
+</style>
+

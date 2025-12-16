@@ -1,0 +1,23 @@
+﻿<h2>Reserva tu servicio</h2>
+<p class="subtitle">Completa los datos del evento</p>
+
+<div class="card">
+    <form method="post">
+
+        <label>Nombre del evento</label>
+        <input name="titulo" placeholder="Ej. Boda María & Juan" required />
+
+        <label>Fecha</label>
+        <input type="date" name="fechaEvento" required />
+
+        <label>Ubicación</label>
+        <input name="lugar" placeholder="Ciudad, salón, hotel…" />
+
+        <label>Cantidad</label>
+        <input type="number" name="cantidad" min="1" value="1" />
+
+        <br />
+        <button class="btn btn-success">Confirmar y pagar</button>
+        <a class="btn btn-secondary" href="/Servicios/Index">Cancelar</a>
+    </form>
+</div>

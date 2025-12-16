@@ -1,0 +1,21 @@
+﻿@model System.Data.DataTable
+<h2>Reservas (Admin)</h2>
+<p><a href="/Admin/Dashboard">← Dashboard</a></p>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        @foreach (System.Data.DataColumn c in Model.Columns)
+        {
+            <th>@c.ColumnName</th>
+        }
+    </tr>
+    @foreach (System.Data.DataRow r in Model.Rows)
+    {
+        <tr>
+            @foreach (var item in r.ItemArray)
+            {
+                <td>@item</td>
+            }
+        </tr>
+    }
+</table>

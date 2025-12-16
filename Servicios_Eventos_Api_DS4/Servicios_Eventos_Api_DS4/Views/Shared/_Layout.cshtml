@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - GoEvents</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="~/Content/site.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="page-loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="topbar">
+        <div class="brand">🎉 GoEvents</div>
+        <div class="user">
+            @if (Session["UserName"] != null)
+            {
+                <span>@Session["UserName"]</span>
+                <a href="/Account/Logout">Salir</a>
+            }
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        © @DateTime.Now.Year - Plataforma de Servicios para Eventos
+    </footer>
+
+    <!-- JS GLOBAL -->
+    <script>
+        // Loader
+        $(window).on('load', function () {
+            $('#page-loader').fadeOut(600);
+        });
+
+        // Animaciones globales
+        $(document).on('mouseenter', '.service-card', function () {
+            $(this).find('.price').stop().animate({ fontSize: '28px' }, 200);
+            $(this).css('box-shadow', '0 20px 40px rgba(0,0,0,.2)');
+        });
+
+        $(document).on('mouseleave', '.service-card', function () {
+            $(this).find('.price').stop().animate({ fontSize: '24px' }, 200);
+            $(this).css('box-shadow', '0 10px 25px rgba(0,0,0,.12)');
+        });
+
+        $(document).on('mouseenter', '.btn', function () {
+            $(this).css('transform', 'scale(1.05)');
+        });
+
+        $(document).on('mouseleave', '.btn', function () {
+            $(this).css('transform', 'scale(1)');
+        });
+    </script>
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <link rel="stylesheet" href="~/Content/servicios.css" />
+
+
+</body>
+</html>

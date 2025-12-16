@@ -1,0 +1,14 @@
+﻿
+<h2>Pago simulado</h2>
+<p>Reserva #@ViewBag.ReservaId</p>
+
+<form method="post">
+    <input type="hidden" name="reservaId" value="@ViewBag.ReservaId" />
+    <label>Método</label><br />
+    <select name="metodo">
+        <option>Tarjeta (Simulado)</option>
+        <option>Transferencia (Simulado)</option>
+        <option>Efectivo (Simulado)</option>
+    </select><br /><br />
+    <button type="submit">Pagar</button>
+</form>

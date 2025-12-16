@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoEvents | Plataforma profesional de eventos</title>
+    <link rel="stylesheet" href="~/Content/site.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+    <div class="hero" style="padding:80px">
+        <div>
+            <h1>Eventos que dejan huella</h1>
+            <p>
+                Gestiona servicios, proveedores y reservas en una plataforma moderna,
+                rápida y profesional.
+            </p>
+
+            <form method="post" style="margin-top:30px">
+                <input name="email" placeholder="Correo electrónico" required />
+                <input type="password" name="password" placeholder="Contraseña" required />
+                <button class="btn btn-primary">Ingresar</button>
+            </form>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200" />
+    </div>
+
+    <script>
+    $('input').on('focus', function () {
+        $(this).css('transform', 'scale(1.03)');
+    }).on('blur', function () {
+        $(this).css('transform', 'scale(1)');
+    });
+    </script>
+
+</body>
+</html>

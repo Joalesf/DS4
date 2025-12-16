@@ -1,0 +1,26 @@
+﻿@@model List<ReservaVM>
+
+    <h2>Mis reservas</h2>
+
+    <div class="card">
+        <table>
+            <tr>
+                <th>Evento</th>
+                <th>Fecha</th>
+                <th>Servicio</th>
+                <th>Total</th>
+                <th>Estado</th>
+            </tr>
+
+            @foreach (var r in Model)
+            {
+                <tr>
+                    <td>@r.Titulo</td>
+                    <td>@r.FechaEvento.ToShortDateString()</td>
+                    <td>@r.Servicio</td>
+                    <td><strong>$@r.Total</strong></td>
+                    <td>@r.Estado</td>
+                </tr>
+            }
+        </table>
+    </div>
