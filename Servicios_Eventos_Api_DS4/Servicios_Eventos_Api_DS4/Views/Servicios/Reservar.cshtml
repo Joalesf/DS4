@@ -1,23 +1,30 @@
-﻿<h2>Reserva tu servicio</h2>
-<p class="subtitle">Completa los datos del evento</p>
+﻿@{
+    ViewBag.Title = "Reservar servicio";
+}
+
+<h2>Reservar servicio</h2>
 
 <div class="card">
     <form method="post">
 
-        <label>Nombre del evento</label>
-        <input name="titulo" placeholder="Ej. Boda María & Juan" required />
+        <!-- 🔴 ESTE ES EL CAMPO CLAVE -->
+        <input type="hidden" name="servicioId" value="@ViewBag.ServicioId" />
 
-        <label>Fecha</label>
+        <label>Nombre del evento</label>
+        <input name="titulo" required />
+
+        <label>Fecha del evento</label>
         <input type="date" name="fechaEvento" required />
 
-        <label>Ubicación</label>
-        <input name="lugar" placeholder="Ciudad, salón, hotel…" />
+        <label>Lugar</label>
+        <input name="lugar" />
 
         <label>Cantidad</label>
-        <input type="number" name="cantidad" min="1" value="1" />
+        <input type="number" name="cantidad" min="1" value="1" required />
 
-        <br />
-        <button class="btn btn-success">Confirmar y pagar</button>
+        <br /><br />
+
+        <button class="btn btn-primary">Continuar a pago</button>
         <a class="btn btn-secondary" href="/Servicios/Index">Cancelar</a>
     </form>
 </div>
